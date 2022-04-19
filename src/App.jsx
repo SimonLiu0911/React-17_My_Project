@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from 'antd'
+// import 'antd/dist/antd.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Button variant="primary">Primary</Button>
+        App
+        <Button type="primary">sdf</Button>
       </div>
     );
   }
