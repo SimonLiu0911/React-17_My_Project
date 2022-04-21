@@ -1,37 +1,29 @@
 import React, { Component } from "react";
-import { Form, Input, Button } from 'antd';
+import { Form, Button } from "react-bootstrap";
 
 import "./login.scss";
 
 class Login extends Component {
-
   handleSubmit = () => {
-    console.log('trigger handleSubmit');
-  }
+    console.log("trigger handleSubmit");
+  };
   render() {
     return (
       <div className="login-content">
-        <h2 className="font-size-1">用戶登錄</h2>
-        {/* <div className="form-content"> */}
-          <Form onSubmit={this.handleSubmit} className="login-form">
-            <Form.Item>
-              <Input
-                placeholder="Username"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Input
-                type="password"
-                placeholder="Password"
-              />
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button">
-                Log in
-              </Button>
-            </Form.Item>
-          </Form>
-        {/* </div> */}
+        <h2 className="font-size-1 login-title">用戶登錄</h2>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Button className="login-form-btn" variant="primary" type="button">
+            Login
+          </Button>
+        </Form>
       </div>
     );
   }
