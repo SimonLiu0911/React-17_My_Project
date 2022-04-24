@@ -4,5 +4,9 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: $illustrator-blue-50;
+  background-color: $illustrator-blue-10;
+}
+
+#root {
+	height: 100vh;
 }
