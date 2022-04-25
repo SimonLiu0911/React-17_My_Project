@@ -1,25 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import "./sideNav.scss";
-const sideNavList = [
-  {
-    id: "1",
-    name: "列表一",
-    path: "/list1"
-  },
-  {
-    id: "2",
-    name: "列表二",
-    path: "/list2"
-  },
-  {
-    id: "3",
-    name: "列表三",
-    path: "/list3"
-  },
-]
+import { Link, withRouter } from "react-router-dom";
 
-const Sidenav = () => {
+// import "./sideNav.scss";
+
+import sideNavList from "../../../config/sideNavListConfig";
+
+const Sidenav = (props) => {
+  const { pathname } = props.location;
+  const checkActive = () => {
+	  if (pathname === '/role') return 'active'
+	  return ''
+  }
   return (
     <div id="sideNav">
       <div className="title">
@@ -27,19 +18,19 @@ const Sidenav = () => {
       </div>
       <div className="sideNav">
         <ul>
-          {
-            sideNavList.map(sideNavItem => {
-              return (
-                <li key={sideNavItem.id}>
-                  <Link to={sideNavItem.path}>{sideNavItem.name}</Link>
-                </li>
-              )
-            })
-          }
+          {sideNavList.map((sideNavItem) => {
+            return (
+              <li className={checkActive()} key={sideNavItem.id}>
+                <Link className="sideNav_link" to={sideNavItem.path}>
+                  {sideNavItem.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
   );
 };
-
-export default Sidenav;
+const SidenavWithRouter = withRouter(Sidenav);
+export default SidenavWithRouter;

@@ -11,16 +11,16 @@ class Admin extends Component {
     return (
       <Layout>
         <Switch>
-          <Route exact path="/list1">
+          <Route exact path="/home">
             <Home />
           </Route>
-          <Route path="/list2">
+          <Route path="/production">
             <Product />
           </Route>
-          <Route path="/list3">
+          <Route path="/role">
             <Role />
           </Route>
-          <Redirect to="/list1"></Redirect>
+          <Redirect to="/home"></Redirect>
         </Switch>
       </Layout>
     );

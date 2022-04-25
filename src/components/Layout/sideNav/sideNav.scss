@@ -1,12 +1,27 @@
 #sideNav {
-  background-color: #0059be;
+  background-color: $system-blue;
   height: calc(100% + 112px);
   .title {
     height: 64px;
-    background-color: #004490;
+    background-color: $system-deepBlue;
     text-align: center;
     line-height: 64px;
-	font-size: 24px;
-	color: #fff;
+    font-size: 24px;
+    color: $text-color-0;
+  }
+  ul {
+    padding: 0;
+	li {
+		&:hover, &.active {
+			background-color: $system-lightBlue;
+		}
+
+		.sideNav_link {
+		  display: block;
+		  padding: 20px;
+		  color: $text-color-0;
+		  text-decoration: none;
+		}
+	}
   }
 }

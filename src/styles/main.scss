@@ -3,6 +3,8 @@
 
 @import "~bootstrap/scss/bootstrap";
 
+@import "../components/Layout/sideNav/sideNav.scss";
+
 body {
   background-color: $illustrator-blue-10;
 }
