@@ -1,10 +1,12 @@
 import React from 'react';
 
+import PageTitle from "../../components/pageTitle/pageTitle";
+
 const Role = () => {
   return (
-    <div>
-      Role
-    </div>
+    <>
+      <PageTitle title={'Role'}></PageTitle>
+    </>
   );
 }
 

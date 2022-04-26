@@ -5,6 +5,9 @@
 // @import "./bootstrap/variables";
 
 @import "../components/Layout/sideNav/sideNav.scss";
+@import "../components/pageTitle/pageTitle.scss";
+@import "../components/Layout/sideNav/sideNav.scss";
+@import "../pages/home/home.scss";
 
 body {
   background-color: $illustrator-blue-10;

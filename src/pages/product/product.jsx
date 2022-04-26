@@ -1,10 +1,12 @@
 import React from 'react';
 
+import PageTitle from "../../components/pageTitle/pageTitle";
+
 const Product = () => {
   return (
-    <div>
-      Product
-    </div>
+    <>
+      <PageTitle title={'產品'}></PageTitle>
+    </>
   );
 }
 
