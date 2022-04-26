@@ -1,16 +1,11 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 
 // import "./sideNav.scss";
 
 import sideNavList from "../../../config/sideNavListConfig";
 
 const Sidenav = (props) => {
-  const { pathname } = props.location;
-  const checkActive = () => {
-	  if (pathname === '/role') return 'active'
-	  return ''
-  }
   return (
     <div id="sideNav">
       <div className="title">
@@ -20,10 +15,14 @@ const Sidenav = (props) => {
         <ul>
           {sideNavList.map((sideNavItem) => {
             return (
-              <li className={checkActive()} key={sideNavItem.id}>
-                <Link className="sideNav_link" to={sideNavItem.path}>
+              <li key={sideNavItem.id}>
+                <NavLink
+                  activeClassName="active"
+                  className="sideNav_link"
+                  to={sideNavItem.path}
+                >
                   {sideNavItem.name}
-                </Link>
+                </NavLink>
               </li>
             );
           })}

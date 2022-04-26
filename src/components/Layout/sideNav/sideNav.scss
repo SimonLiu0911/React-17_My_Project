@@ -12,15 +12,15 @@
   ul {
     padding: 0;
 	li {
-		&:hover, &.active {
-			background-color: $system-lightBlue;
-		}
-
+		
 		.sideNav_link {
-		  display: block;
-		  padding: 20px;
-		  color: $text-color-0;
-		  text-decoration: none;
+			display: block;
+			padding: 20px;
+			color: $text-color-0;
+			text-decoration: none;
+			&:hover, &.active {
+				background-color: $system-lightBlue;
+			}
 		}
 	}
   }
