@@ -1,7 +1,7 @@
 import React from "react";
 
 // Components
-import PageTitle from "../../components/pageTitle/pageTitle";
+import PageTitle from "../../components/PageTitle/pageTitle";
 
 const Home = () => {
   return <>

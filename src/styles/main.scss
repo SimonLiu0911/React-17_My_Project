@@ -4,9 +4,11 @@
 @import "~bootstrap/scss/bootstrap";
 // @import "./bootstrap/variables";
 
+// components
 @import "../components/Layout/sideNav/sideNav.scss";
-@import "../components/pageTitle/pageTitle.scss";
+@import "../components/PageTitle/pageTitle.scss";
 @import "../components/Layout/sideNav/sideNav.scss";
+// pages
 @import "../pages/home/home.scss";
 
 body {
