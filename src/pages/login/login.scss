@@ -1,0 +1,17 @@
+.login {
+  &-content {
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  &-title {
+    text-align: center;
+  }
+  &-form {
+    &-btn {
+      width: 100%;
+    }
+  }
+}
