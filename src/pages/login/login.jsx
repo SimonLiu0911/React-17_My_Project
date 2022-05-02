@@ -1,17 +1,21 @@
 import React, { useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 
+import { reqLogin } from "../../api";
+
 import "./login.scss";
 
 const Login = (props) => {
   const emailNode = useRef();
   const passwordNode = useRef();
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const email = emailNode.current.value;
     const password = passwordNode.current.value;
-    console.log(props);
-	props.history.replace('/')
-	
+    const response = await reqLogin(email, password);
+    const { success, token } = response.data;
+    if (success) {
+    }
+    // props.history.replace('/')
   };
 
   return (
