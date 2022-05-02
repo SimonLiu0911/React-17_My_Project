@@ -1,7 +1,7 @@
 .login {
   &-content {
     width: 400px;
-    height: 300px;
+    min-height: 300px;
     padding: 20px;
     margin: 0 auto;
     background-color: #fff;
@@ -10,6 +10,9 @@
     text-align: center;
   }
   &-form {
+	  .error-msg {
+		  color: $status-unread;
+	  }
     &-btn {
       width: 100%;
     }

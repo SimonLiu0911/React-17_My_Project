@@ -1,21 +1,14 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 
-const Msgmodal = () => {
+const Msgmodal = (props) => {
+  const { showModal, handleClose } = props;
   return (
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+    <Modal show={showModal} onHide={handleClose}>
+      <Modal.Header closeButton={false}>
         <Modal.Title>Modal heading</Modal.Title>
       </Modal.Header>
       <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };
