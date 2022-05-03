@@ -13,9 +13,12 @@ const Login = (props) => {
     setLoging(true);
     try {
       const response = await reqLogin(email, password);
-      const { success, token } = response.data;
+      const { success, token, expired } = response.data;
       if (success) {
         sessionStorage.setItem("token", token);
+        document.cookie = `Token=${token}; expires=${new Date(
+          expired * 1000
+        )}; path=/`;
         // props.history.replace('/')
       }
       console.log(1, "try");

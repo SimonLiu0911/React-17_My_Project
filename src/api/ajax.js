@@ -26,7 +26,6 @@ export default function ajax(url, data = {}, type) {
       })
       .catch((error) => {
         // 3. 如果失敗，不調用reject(reason)，而是提示異常訊息
-		console.log('登入失敗', error)
 		reject(error)
       });
   });
