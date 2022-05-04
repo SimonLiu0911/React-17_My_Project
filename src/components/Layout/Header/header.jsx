@@ -1,11 +1,19 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Button } from "react-bootstrap";
+
+import { reqLogout } from '../../../api';
 
 import "./header.scss";
 
-const Header = () => {
-  const handleLoginOut = () => {
-    console.log("handleLoginOut");
+const Header = (props) => {
+  const handleLoginOut = async () => {
+    const apiToken = sessionStorage.getItem("apiToken")
+    const response = await reqLogout(apiToken)
+    const { success } = response.data
+    if (success) {
+      props.history.replace("/login")
+    }
   };
   return (
     <div id="header" className="d-flex justify-content-end align-items-center">
@@ -19,4 +27,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageTitle from "../../components/pageTitle/pageTitle";
+import PageTitle from "../../components/PageTitle/pageTitle";
 
 const Role = () => {
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 /**
  * 進行Local數據存儲管理的工具模塊
  */

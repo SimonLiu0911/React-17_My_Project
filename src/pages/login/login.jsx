@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
+import memoryUtils from "../../utils/memoryUtils";
 
 import { reqLogin } from "../../api";
 
@@ -14,32 +15,54 @@ const Login = (props) => {
     try {
       const response = await reqLogin(email, password);
       const { success, token, expired } = response.data;
+      memoryUtils.user = response.data
       if (success) {
-        sessionStorage.setItem("token", token);
+        sessionStorage.setItem("apiToken", token);
         document.cookie = `Token=${token}; expires=${new Date(
           expired * 1000
         )}; path=/`;
-        // props.history.replace('/')
+        props.history.replace('/')
       }
-      console.log(1, "try");
+      console.log("login try");
       setLoging(false);
     } catch ({ response }) {
-      console.log(2, "catch");
+      console.log("login catch");
       const { errors } = response.data;
       const { email, password } = errors;
+      console.log(errors);
       setLoging(false);
-      setEmailErrorMsg(email[0]);
-      setPasswordErrorMsg(password[0]);
+      if (email) {
+        setEmailErrorMsg(email[0]);
+      }
+      if (password) {
+        setPasswordErrorMsg(password[0]);
+      }
     }
   };
 
   useEffect(() => {
-    setEmailErrorMsg("");
+    let isMounted = true
+    if (isMounted) {
+      setEmailErrorMsg("");
+    }
+    return () => {
+      isMounted = false
+    }
   }, [email]);
 
   useEffect(() => {
-    setPasswordErrorMsg("");
+    let isMounted = true
+    if (isMounted) {
+      setPasswordErrorMsg("");
+    }
+    return () => {
+      isMounted = false
+    }
   }, [password]);
+
+  useEffect(() => {
+    sessionStorage.clear()
+  }, [])
 
   return (
     <div className="login-content">

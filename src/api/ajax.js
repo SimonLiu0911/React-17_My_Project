@@ -18,6 +18,8 @@ export default function ajax(url, data = {}, type) {
       case "POST":
         promise = axios.post(url, data);
         break;
+      default:
+        return
     }
     promise
       .then((response) => {
@@ -26,7 +28,7 @@ export default function ajax(url, data = {}, type) {
       })
       .catch((error) => {
         // 3. 如果失敗，不調用reject(reason)，而是提示異常訊息
-		reject(error)
+        reject(error)
       });
   });
 }
