@@ -1,0 +1,20 @@
+.login {
+  &-content {
+    width: 400px;
+    min-height: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+  &-title {
+    text-align: center;
+  }
+  &-form {
+	  .error-msg {
+		  color: $status-unread;
+	  }
+    &-btn {
+      width: 100%;
+    }
+  }
+}

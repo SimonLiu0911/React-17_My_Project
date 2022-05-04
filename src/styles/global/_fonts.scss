@@ -1,0 +1,7 @@
+@import "../variables//fonts";
+
+@each $size, $value in $font-size-map {
+  .font-size-#{$size} {
+    font-size: $value;
+  }
+}
