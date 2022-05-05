@@ -7,22 +7,22 @@ import { checkToken } from "../../api";
 import PageTitle from "../../components/PageTitle/pageTitle";
 
 const Home = (props) => {
-  const habdleToken = async () => {
-    const apiToken = sessionStorage.getItem("apiToken")
-    try {
-      const response = await checkToken(apiToken)
-      const { success } = response.data
-      if (!success) {
+
+  useEffect(() => {
+    const habdleToken = async () => {
+      const apiToken = sessionStorage.getItem("apiToken")
+      try {
+        const response = await checkToken(apiToken)
+        const { success } = response.data
+        if (!success) {
+          props.history.replace('/login')
+        }
+      } catch ({ response }) {
         props.history.replace('/login')
       }
-    } catch ({ response }) {
-      props.history.replace('/login')
     }
-  }
-  
-  useEffect(() => {
     habdleToken()
-  }, [])
+  }, [props.history])
 
   return <>
     <PageTitle title={'首頁'}></PageTitle>
