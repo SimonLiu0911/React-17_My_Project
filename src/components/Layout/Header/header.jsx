@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
+import BaseButton from "../../Base/BaseButton/BaseButton"
 
 import { reqLogout } from '../../../api';
 
@@ -19,9 +20,10 @@ const Header = (props) => {
     <div id="header" className="d-flex justify-content-end align-items-center">
       <div className="me-3">
         <span className="me-2">歡迎, admin</span>
-        <Button variant="primary" onClick={handleLoginOut}>
+        {/* <Button variant="primary" onClick={handleLoginOut}>
           登出
-        </Button>
+        </Button> */}
+        <BaseButton variant="primary" onClick={handleLoginOut}>登出</BaseButton>
       </div>
     </div>
   );
