@@ -19,7 +19,7 @@ const Home = (props) => {
   };
 
   // 用來確認是否可以登入
-  const habdleToken = async () => {
+  const handleToken = async () => {
     const apiToken = sessionStorage.getItem("apiToken");
     try {
       const response = await checkToken(apiToken);
@@ -33,7 +33,7 @@ const Home = (props) => {
   };
 
   useEffect(() => {
-    habdleToken();
+    handleToken();
   }, [props.history]);
 
   return (
