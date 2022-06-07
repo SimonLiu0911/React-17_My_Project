@@ -4,8 +4,7 @@ import { withRouter } from "react-router-dom";
 import BaseButton from "../../Base/BaseButton/BaseButton"
 
 import { reqLogout } from '../../../api';
-
-import "./header.scss";
+import {HeaderStyle} from './style';
 
 const Header = (props) => {
   const handleLoginOut = async () => {
@@ -17,7 +16,7 @@ const Header = (props) => {
     }
   };
   return (
-    <div id="header" className="d-flex justify-content-end align-items-center">
+    <HeaderStyle className="d-flex justify-content-end align-items-center">
       <div className="me-3">
         <span className="me-2">歡迎, admin</span>
         {/* <Button variant="primary" onClick={handleLoginOut}>
@@ -25,7 +24,7 @@ const Header = (props) => {
         </Button> */}
         <BaseButton variant="primary" onClick={handleLoginOut}>登出</BaseButton>
       </div>
-    </div>
+    </HeaderStyle>
   );
 };
 
