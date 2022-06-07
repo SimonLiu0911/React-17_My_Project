@@ -2,23 +2,23 @@ import React from "react";
 import { withRouter, NavLink } from "react-router-dom";
 
 // import "./sideNav.scss";
+import {SideNavStyle, SideNavTitleStyle, SideNavWrapStyle} from "./sytle";
 
 import sideNavList from "../../../config/sideNavListConfig";
 
 const Sidenav = (props) => {
   return (
-    <div id="sideNav">
-      <div className="title">
+    <SideNavStyle>
+      <SideNavTitleStyle>
         <span>後台管理</span>
-      </div>
-      <div className="sideNav">
+      </SideNavTitleStyle>
+      <SideNavWrapStyle>
         <ul>
           {sideNavList.map((sideNavItem) => {
             return (
               <li key={sideNavItem.id}>
                 <NavLink
                   activeClassName="active"
-                  className="sideNav_link"
                   to={sideNavItem.path}
                 >
                   {sideNavItem.name}
@@ -27,8 +27,8 @@ const Sidenav = (props) => {
             );
           })}
         </ul>
-      </div>
-    </div>
+      </SideNavWrapStyle>
+    </SideNavStyle>
   );
 };
 const SidenavWithRouter = withRouter(Sidenav);
